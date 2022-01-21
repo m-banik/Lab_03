@@ -1,6 +1,6 @@
 from random import randint
-from .encrypt import encrypt
-from .decrypt import decrypt
+from .encrypt_by_caesar import encrypt_by_caesar
+from .decrypt_by_caesar import decrypt_by_caesar
 
 
 def encrypt_and_decrypt_by_mirroring(input_data_path = './assets/encrypt_me.txt'):
@@ -22,11 +22,11 @@ def encrypt_and_decrypt_by_mirroring(input_data_path = './assets/encrypt_me.txt'
     print(reversed_text)
     print()
     key = randint(1, 25)
-    encrypted_text = encrypt(reversed_text, key)
+    encrypted_text = encrypt_by_caesar(reversed_text, key)
     print("Dane z pliku po połączniu w jeden teskt, odwróceniu i zakodowaniu szyfrem Cezara:")
     print(encrypted_text)
     print()
-    decrypted_text = decrypt(encrypted_text, key)
+    decrypted_text = decrypt_by_caesar(encrypted_text, key)
     print("Dane po odszyfrowaniu:")
     print(decrypted_text)
     print()

@@ -1,5 +1,5 @@
-# Algorytm przyjmuje trzeci argument typu prawda/fałsz. Dla True ignoruje kwestię wielkości liter.
-def find_by_brute_force(text: str, phrase: str, ignore_letter_size: bool = False):
+def find_all_by_brute_force(text: str, phrase: str, ignore_letter_size: bool = False):
+    found_indexes: list[int] = []
     if len(phrase) <= len(text):
         for i in range(0, len(text)):
             scope = i + len(phrase)
@@ -13,6 +13,6 @@ def find_by_brute_force(text: str, phrase: str, ignore_letter_size: bool = False
                 sub_str += text[j]
             if ((ignore_letter_size is True and sub_str.lower() == phrase.lower()) or
                 (ignore_letter_size is False and sub_str == phrase)):
-                return i
-    return -1
+                found_indexes.append(i)
+    return found_indexes
 

@@ -3,8 +3,8 @@ from functions.check_if_is_palindrome import check_if_is_palindrome
 from functions.check_file_for_palindromes import check_file_for_palindromes
 from functions.check_if_is_anagram import check_if_is_anagram
 from functions.check_file_for_anagrams import check_file_for_anagrams
-from functions.encrypt import encrypt
-from functions.decrypt import decrypt
+from functions.encrypt_by_caesar import encrypt_by_caesar
+from functions.decrypt_by_caesar import decrypt_by_caesar
 from functions.encrypt_and_decrypt_by_mirroring import encrypt_and_decrypt_by_mirroring
 
 
@@ -60,7 +60,7 @@ print()
 while True:
     try:
         text1 = input("Proszę podać pierwszy wyraz: ")
-        text2 = input("Proszę podać pierwszy wyraz: ")
+        text2 = input("Proszę podać drugi wyraz: ")
         break
     except ValueError:
         print("Podano niepoprawne dane!")
@@ -90,9 +90,9 @@ while True:
         print("Podano niepoprawne dane!")
 
 
-encrypted = encrypt(text, key)
+encrypted = encrypt_by_caesar(text, key)
 print("Tekst zadany w postaci szyfrowanej:", encrypted)
-print("Szyfr zdekodowany do postaci tekstu zadanego: ", decrypt(encrypted, key))
+print("Szyfr zdekodowany do postaci tekstu zadanego: ", decrypt_by_caesar(encrypted, key))
 
 
 # Zadanie 5

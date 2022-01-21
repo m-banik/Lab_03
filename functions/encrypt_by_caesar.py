@@ -1,7 +1,7 @@
 from common.variables import key
 
 
-def encrypt(text:str, used_key: int = key):
+def encrypt_by_caesar(text:str, used_key: int = key):
     encrypted = ""
     for i in range(0, len(text)):
         if ord(text[i]) - used_key > 122:
